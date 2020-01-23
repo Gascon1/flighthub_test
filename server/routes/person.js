@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const getResource = require("../helpers/getResource");
+const searchPerson = require("../helpers/searchPerson");
 
 /* GET users listing. */
 router.get("/", function(req, res, next) {
-  getResource(res, "planets");
+  searchPerson(res, "obi");
 });
 
 module.exports = router;
