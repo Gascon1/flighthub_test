@@ -4,7 +4,7 @@ const getResource = require("../helpers/getResource");
 
 /* GET users listing. */
 router.get("/", function(req, res, next) {
-  getResource(res, "people");
+  getResource(res, "planets");
 });
 
 module.exports = router;
