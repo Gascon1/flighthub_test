@@ -4,7 +4,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-const personRouter = require("./server/routes/person");
 const peopleRouter = require("./server/routes/people");
 const planetsRouter = require("./server/routes/planets.js");
 const starshipsRouter = require("./server/routes/starships");
@@ -24,7 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/person", personRouter);
 app.use("/people", peopleRouter);
 app.use("/planets", planetsRouter);
 app.use("/starships", starshipsRouter);
