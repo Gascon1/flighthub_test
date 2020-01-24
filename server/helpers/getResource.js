@@ -10,10 +10,10 @@ const getResource = (res, whichResource) => {
     .get(url)
     .then(response => {
       if (response.next === null) {
-        fullData.push(response.results);
+        fullData.push(...response.results);
         res.send(fullData);
       } else {
-        fullData.push(response.results);
+        fullData.push(...response.results);
         pageNumber += 1;
         getResource(res, whichResource);
       }
