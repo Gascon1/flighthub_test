@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MaterialTable from "material-table";
+import axios from "axios";
 
 export default function People(props) {
   const [state, setState] = useState({
@@ -21,6 +22,13 @@ export default function People(props) {
     data: [],
     selectedRow: null
   });
+
+  useEffect(() => {
+    axios.get(`http://localhost:3001/people`).then(res => {
+      setState({ ...state, data: res.data });
+      console.log(state);
+    });
+  }, []);
 
   return (
     <MaterialTable
