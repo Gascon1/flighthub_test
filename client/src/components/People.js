@@ -19,8 +19,7 @@ export default function People(props) {
         field: "eye_color"
       }
     ],
-    data: [],
-    selectedRow: null
+    data: []
   });
 
   useEffect(() => {
@@ -35,9 +34,7 @@ export default function People(props) {
       title="Planned take home test"
       columns={state.columns}
       data={state.data}
-      onRowClick={(evt, selectedRow) => setState({ selectedRow })}
       options={{
-        exportButton: true,
         grouping: true,
         pageSize: 10,
 

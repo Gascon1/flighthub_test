@@ -12,6 +12,8 @@ const getResource = (res, whichResource) => {
       if (response.next === null) {
         fullData.push(...response.results);
         res.send(fullData);
+        pageNumber = 1;
+        fullData = [];
       } else {
         fullData.push(...response.results);
         pageNumber += 1;
