@@ -4,7 +4,7 @@ const getResource = (res, whichResource) => {
   swapi
     .get(`https://swapi.co/api/${whichResource}`)
     .then(response => {
-      res.send(formatResource(response));
+      res.send(response.results);
     })
     .catch(() => {
       console.log("error");
