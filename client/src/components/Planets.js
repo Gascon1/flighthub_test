@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MaterialTable from "material-table";
+import Loader from "react-loader-spinner";
+
 import axios from "axios";
 
 export default function People(props) {
@@ -29,7 +31,11 @@ export default function People(props) {
     });
   }, []);
 
-  return (
+  return state.data.length === 0 ? (
+    <div className="loader-position">
+      <Loader type="Grid" color="#000000" height={300} width={300} />
+    </div>
+  ) : (
     <MaterialTable
       title="Planets"
       columns={state.columns}
