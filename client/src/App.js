@@ -9,19 +9,19 @@ function App() {
   return (
     <Router>
       <div className="nav-header">
-        <Link to="people" className="nav-header-item">
+        <Link to="/" className="nav-header-item">
           People
         </Link>
-        <Link to="planets" className="nav-header-item">
+        <Link to="/planets" className="nav-header-item">
           Planets
         </Link>
-        <Link to="starships" className="nav-header-item">
+        <Link to="/starships" className="nav-header-item">
           Starships
         </Link>
       </div>
 
       <Switch>
-        <Route path="/people">
+        <Route exact path="/">
           <People />
         </Route>
 
