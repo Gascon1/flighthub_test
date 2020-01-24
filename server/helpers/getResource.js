@@ -23,12 +23,12 @@ const getResource = (res, whichResource) => {
     });
 };
 
-const formatResource = apiCall => {
-  let formattedResource = [];
-  for (const item of apiCall.results) {
-    formattedResource.push(item.name);
-  }
-  return formattedResource;
-};
+// const formatResource = apiCall => {
+//   let formattedResource = [];
+//   for (const item of apiCall.results) {
+//     formattedResource.push(item.name);
+//   }
+//   return formattedResource;
+// };
 
 module.exports = getResource;
