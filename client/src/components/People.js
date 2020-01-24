@@ -31,25 +31,13 @@ export default function People(props) {
 
   return (
     <MaterialTable
-      title="Planned take home test"
+      title="People"
       columns={state.columns}
       data={state.data}
       options={{
         grouping: true,
         pageSize: 10,
-
-        rowStyle: rowData => ({
-          color:
-            state.selectedRow &&
-            state.selectedRow.tableData.id === rowData.tableData.id
-              ? "#52a27e"
-              : "#000",
-          backgroundColor:
-            state.selectedRow &&
-            state.selectedRow.tableData.id === rowData.tableData.id
-              ? "#EEE"
-              : "#FFF"
-        })
+        headerStyle: { fontWeight: "bolder" }
       }}
     />
   );
