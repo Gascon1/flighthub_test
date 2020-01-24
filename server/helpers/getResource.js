@@ -1,13 +1,25 @@
 const swapi = require("swapi-node");
 
+let pageNumber = 1;
+let fullData = [];
+
 const getResource = (res, whichResource) => {
+  let url = `https://swapi.co/api/${whichResource}/?page=${pageNumber}`;
+  console.log(fullData);
   swapi
-    .get(`https://swapi.co/api/${whichResource}`)
+    .get(url)
     .then(response => {
-      res.send(response.results);
+      if (response.next === null) {
+        fullData.push(response.results);
+        res.send(fullData);
+      } else {
+        fullData.push(response.results);
+        pageNumber += 1;
+        getResource(res, whichResource);
+      }
     })
-    .catch(() => {
-      console.log("error");
+    .catch(err => {
+      console.log("error", err);
     });
 };
 
