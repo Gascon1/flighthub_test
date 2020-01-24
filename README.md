@@ -1,6 +1,6 @@
 # Flighthub test
 
-## Getting started
+## Instructions
 
 1. Install dependencies using the `npm install` command from the flighthub_test directory as well as the client directory.
 2. Open 2 terminals.
